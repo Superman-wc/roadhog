@@ -101,9 +101,9 @@ export function getLastRules({ paths, babelOptions }) {
       },
     },
     {
-      test:/\.tpl$/,
+      test: /\.tpl$/,
       include: paths.appSrc,
-      use:'html-loader',
+      use: 'html-loader',
     },
     {
       test: /\.tsx?$/,
