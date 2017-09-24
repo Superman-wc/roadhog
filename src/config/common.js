@@ -68,6 +68,7 @@ export function getFirstRules({ paths, babelOptions }) {
   return [
     {
       exclude: [
+        /\.tpl$/,
         /\.(html|ejs)$/,
         /\.(js|jsx)$/,
         /\.(css|less|scss)$/,
@@ -98,6 +99,11 @@ export function getLastRules({ paths, babelOptions }) {
       options: {
         name: '[name].[ext]',
       },
+    },
+    {
+      test:/\.tpl$/,
+      include: paths.appSrc,
+      use:'html-loader',
     },
     {
       test: /\.tsx?$/,
